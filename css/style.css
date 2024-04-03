@@ -363,6 +363,10 @@ body{
 
 
 /*** Footer ***/
+.bg-tert{
+    background: #3b890b;
+}
+
 .footer .btn.btn-social {
     margin-right: 5px;
     width: 35px;
