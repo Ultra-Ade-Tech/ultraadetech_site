@@ -10,11 +10,9 @@
         }, 1);
     };
     spinner();
-    
-    
+
     // Initiate the wowjs
     new WOW().init();
-
 
     // Sticky Navbar
     $(window).scroll(function () {
@@ -24,14 +22,13 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
-    
-    
+
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
+
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
@@ -52,8 +49,7 @@
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
-    
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -67,6 +63,11 @@
         return false;
     });
 
+    // Facts counter
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 1000 // Adjusted time property to 3000 milliseconds
+    });
 
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
@@ -89,6 +90,5 @@
             }
         }
     });
-    
-})(jQuery);
 
+})(jQuery);
