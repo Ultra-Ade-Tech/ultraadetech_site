@@ -69,6 +69,34 @@
         time: 1000 // Adjusted time property to 3000 milliseconds
     });
 
+    // Service carousel
+    $(".guest-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        center: true,
+        margin: 25,
+        dots: true,
+        loop: true,
+        nav : false,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:2
+            },
+            768:{
+                items:3
+            },
+            992:{
+                items:2
+            },
+            1200:{
+                items:3
+            }
+        }
+    });
+
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
