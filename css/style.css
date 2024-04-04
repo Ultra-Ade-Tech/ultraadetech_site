@@ -1,7 +1,12 @@
 body{
-    overflow: auto;
     scroll-behavior: smooth;
 }
+
+.container-fluid, .container-xxl {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 
 :root {
     --primary: #a4d61b;
