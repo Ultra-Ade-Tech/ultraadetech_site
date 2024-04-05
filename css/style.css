@@ -14,6 +14,10 @@ body{
     --dark: #000000;
 }
 
+.text-blue{
+    color: #1074ae;
+}
+
 .speak-img {
     position: relative;
     overflow: hidden;
@@ -300,10 +304,11 @@ body{
 .custom-navbar-toggler-icon::after {
     content: '';
     display: block;
-    height: 2px;
+    height: 4px;
     width: 100%;
     background-color: currentColor;
     position: relative;
+    margin-right: 2px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -333,6 +338,13 @@ body{
 
 .hero-header1 {
     background: linear-gradient(rgba(20, 20, 31, .7), rgba(7, 7, 7, 0.7)), url(../img/bg-hero3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-headerp {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(7, 7, 7, 0.7)), url(../img/page.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
