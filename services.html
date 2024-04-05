@@ -64,7 +64,7 @@
     <!-- Topbar End -->
 
     <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0 m-0">
+    <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-2 py-lg-0">
             <a href="index.html" class="navbar-brand">
                 <img src="img/logo_2.png" width="100px" alt="Logo" class="d-none d-lg-block">
@@ -391,24 +391,48 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="readMoreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     <!-- Booking Start -->
+     <div class="container-fluid my-5 px-0">
+        <div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" style="margin-top: .5rem;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="bg-primary text-center p-5">
+                        <h1 class="mb-4 text-white">Book For A Service</h1>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;" required>
+                                        <option selected>Select A Service</option>
+                                        <option value="1">USA Permanent Resident EB2NIW</option>
+                                        <option value="2">Students Visa Application Support</option>
+                                        <option value="3">Educational Research and Data Analysis</option>
+                                        <option value="4">Career Coaching Program</option>
+                                        <option value="5">Right Through Program (RTP)</option>
+                                        <option value="6">Prime One-On-One Consultation</option>
+                                        <option value="7">Overseas Admission Application</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Send a message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-            <p>
-                Always remember that the paradigm shift from Industrial Revolution 4.0 to 5.0 is near, and most jobs will be seriously swept out of the market and replaced with artificial intelligence (AI). Therefore, it is vital to consult Ultra Ade Tech today before you take any step for us to direct you to the best career.
-            </p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
         </div>
     </div>
+    <!-- Booking End -->
+
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-2 wow fadeInUp" data-wow-delay="0.1s">
@@ -495,10 +519,8 @@
 </div>
 <!-- Footer End -->
 
-
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -512,7 +534,6 @@
 <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-
 
 <script src="js/main.js"></script>
 </body>
