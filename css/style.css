@@ -438,7 +438,7 @@ body{
 }
 
 .hero-header-scholar{
-    background: radial-gradient(rgba(20, 20, 31, .7), rgba(75, 189, 9, 0.7)), url(../img/scholar-bg.jpg);
+    background: radial-gradient(rgba(20, 20, 31, .7), transparent), url(../img/scholar-bg.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -469,6 +469,64 @@ body{
     color: rgba(255, 255, 255, .5);
 }
 
+.booking-form {
+    background: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.booking-form .form-control,
+.booking-form .form-select {
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.booking-form .form-control:focus,
+.booking-form .form-select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form textarea.form-control {
+    height: 150px;
+}
+
+.booking-form .btn-primary {
+    background: #3B890B;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    border-radius: 100px;
+}
+
+.booking-form .btn-primary:hover {
+    background: var(--secondary);
+}
+
+@media (max-width: 768px) {
+    .booking-form h1 {
+        font-size: 2rem;
+    }
+
+    .booking-form .form-control,
+    .booking-form .form-select {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .booking-form .btn-primary {
+        font-size: 1rem;
+    }
+}
 
 /*** Section Title ***/
 .section-title {
