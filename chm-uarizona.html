@@ -166,6 +166,24 @@
 </div>
 <!-- Scholarship Details End -->
 
+    <!-- Similar Opportunities Carousel Start -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Similar Opportunities</h2>
+    <div id="similarOpportunitiesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Carousel Items will be dynamically added here -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#similarOpportunitiesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden text-primary">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#similarOpportunitiesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!-- Similar Opportunities Carousel End -->
 
     <!-- Booking Start -->
     <div class="container-fluid my-3 px-0">
@@ -273,5 +291,71 @@
 
     <script src="js/main.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2076281327328477" crossorigin="anonymous"></script>
+    <script>
+        const similarOpportunities = [
+        {
+            title: "PhD Funding in Social Work",
+            institution: "Boston University",
+            country: "Boston, MA, USA",
+            level: "PhD",
+            fundingType: "Full Financial Support",
+            deadline: "December 20",
+            link: "sow-boston.html"
+        },
+        {
+            title: "PhD Funding at Chobanian & Avedisian School of Medicine",
+            institution: "Chobanian & Avedisian School of Medicine | Boston University",
+            country: "Boston, MA, USA",
+            level: "MD & PhD",
+            fundingType: "Full Financial Support",
+            deadline: "December 20",
+            link: "medic-boston.html"
+        },
+        {
+            title: "Biochemistry PhD, Funding",
+            institution: "University of Wisconsin–Madison",
+            country: "USA",
+            level: "PhD",
+            fundingType: "Full Financial Support",
+            deadline: "December 1",
+            link: "biochem-wiscon.html"
+        },
+    ];
+
+    // Function to create carousel items
+    function createCarouselItem(opportunity, index) {
+        return `
+            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">${opportunity.title}</h5>
+                                <p class="card-text"><i class="fas fa-university text-primary me-2"></i>${opportunity.institution}</p>
+                                <p class="card-text"><i class="fas fa-globe text-primary me-2"></i>${opportunity.country}</p>
+                                <p class="card-text"><i class="fas fa-graduation-cap text-primary me-2"></i>${opportunity.level}</p>
+                                <p class="card-text"><i class="fas fa-dollar-sign text-primary me-2"></i>${opportunity.fundingType}</p>
+                                ${opportunity.deadline ? `<p class="card-text"><i class="fas fa-calendar-alt text-primary me-2"></i>${opportunity.deadline}</p>` : ''}
+                                <a href="${opportunity.link}" class="btn btn-primary mt-2" style="border-radius: 25px; padding: 8px 20px; font-weight: 500; transition: all 0.3s ease;">View details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Function to populate the carousel
+    function populateCarousel() {
+        const carouselInner = document.querySelector('#similarOpportunitiesCarousel .carousel-inner');
+        similarOpportunities.forEach((opportunity, index) => {
+            carouselInner.innerHTML += createCarouselItem(opportunity, index);
+        });
+    }
+
+    // Populate the carousel on page load
+    document.addEventListener('DOMContentLoaded', populateCarousel);
+
+    </script>
 </body>
 </html>

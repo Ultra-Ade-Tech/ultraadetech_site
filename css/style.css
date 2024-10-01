@@ -379,6 +379,50 @@ body{
     background-size: cover;
 }
 
+/* Custom styles for carousel navigation buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--bs-primary); /* Use Bootstrap's primary color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.carousel-control-prev-icon::before {
+    margin-right: 2px;
+}
+
+.carousel-control-next-icon::before {
+    margin-left: 2px;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--bs-primary-dark); /* Use Bootstrap's darker primary color on hover */
+}
+
+
 .hero-headerX {
     background: radial-gradient(rgba(48, 40, 46, 0.7), transparent), url(../img/bg-1.jpg);
     background-position: center center;
