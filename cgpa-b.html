@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Biochemistry PhD | University of Wisconsin–Madison</title>
+    <title>CGPA Calculator - Ultra Ade Tech</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Ultra Ade Tech | Find a Graduate Assistantship" name="description">
+    <meta content="Calculate your CGPA with our easy-to-use tool provided by Ultra Ade Tech." name="description">
 
     <!-- Favicon -->
     <link href="img/icon.png" rel="icon">
@@ -25,10 +25,10 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Biochemistry PhD | University of Wisconsin–Madison">
-    <meta property="og:description" content="Find detailed information about the Biochemistry PhD program at the University of Wisconsin–Madison.">
-    <meta property="og:image" content="./img/wisconsin.png">
-    <meta property="og:url" content="https://www.ultraadetech.com/biochem-wiscon.html">
+    <meta property="og:title" content="CGPA Calculator - Ultra Ade Tech">
+    <meta property="og:description" content="Calculate your CGPA with our easy-to-use tool provided by Ultra Ade Tech.">
+    <meta property="og:image" content="./img/cgpa-calculator.png">
+    <meta property="og:url" content="https://www.ultraadetech.com/cgpa-calculator.html">
     <meta property="og:type" content="website">
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -36,6 +36,85 @@
 
     <!-- Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .cgpa-calculator {
+            background: var(--primary);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cgpa-calculator h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .cgpa-calculator .form-control {
+            background: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .cgpa-calculator .form-control:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cgpa-calculator .remove-course {
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .cgpa-calculator #addCourse,
+        .cgpa-calculator button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .cgpa-calculator #addCourse {
+            background-color: #28a745;
+        }
+
+        .cgpa-calculator .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .cgpa-calculator table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .cgpa-calculator table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .cgpa-calculator td{
+            color: #fff;
+        }
+
+        .cgpa-calculator th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 
 <body class="scholar">
@@ -106,8 +185,8 @@
                 <div class="carousel-item active">
                     <div class="container-fluid bg-primary py-5 mb-2 hero-header-scholar" style="background-image: url('./img/bg-1.jpg'); background-size: cover; background-position: center;">
                         <div class="container py-5">
-                            <h1 class="display-4 text-white mb-3 animated slideInDown">Biochemistry PhD</h1>
-                            <p class="text-white mb-4 animated slideInDown">Discover the best scholarships for your educational journey.</p>
+                            <h1 class="text-white mb-4">CGPA Calculator - Ultra Ade Tech</h1>
+                            <p class="text-white mb-4">Calculate your CGPA with our easy-to-use tool provided by Ultra Ade Tech.</p>
                         </div>
                     </div>
                 </div>
@@ -115,109 +194,43 @@
         </div>
     </div>
 
-    <!-- Scholarship Details Start -->
+    <!-- CGPA Calculator Start -->
     <div class="container-fluid my-2 px-0">
         <div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" style="margin-top: .5rem;">
             <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="p-2">
-                        <h1 class="mb-4 text-center">Biochemistry PhD</h1>
-
-                        <!-- Image Placeholder -->
-                        <div class="text-center mb-4">
-                            <img src="./img/wisconsin.png" class="img-fluid rounded" alt="Biochemistry Image">
-                        </div>
-
-                        <!-- Overview Section -->
-                        <div class="mb-5">
-                            <p>The Biochemistry PhD program at the University of Wisconsin–Madison offers comprehensive funding and support for students. IPiB students receive a full stipend as well as tuition remission and comprehensive health insurance. The stipends take the form of traineeships, research assistantships, or fellowships, and are guaranteed for all IPiB PhD candidates in good academic standing and making satisfactory research progress.</p>
-                        </div>
-
-                        <!-- Grid Layout for Details -->
-                        <div class="row">
-                            <!-- Details -->
-                            <div class="col-md-6 mb-3">
-                                <h3 class="mb-2">Requirements:</h3>
-                                <p>Fall Deadline: December 1</p>
-                                <p>GRE: Not required.</p>
-                                <p>English Proficiency Test: Required</p>
-                                <p>Letters of Recommendation: 3</p>
+                <div class="col-lg-8">
+                    <div class="bg-primary text-center p-5 cgpa-calculator">
+                        <h1 class="mb-4 text-white">CGPA Calculator</h1>
+                        <form id="cgpaForm">
+                            <div class="mb-3">
+                                <label for="gradingSystem" class="form-label text-white">Select Grading System:</label>
+                                <select id="gradingSystem" class="form-control">
+                                    <option value="4.0">4.0 Scale</option>
+                                    <option value="5.0">5.0 Scale</option>
+                                </select>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <h3 class="mb-2">Application Process:</h3>
-                                <p>Graduate admissions is a two-step process between academic programs and the Graduate School. Applicants must meet the minimum requirements of the Graduate School as well as the program(s).</p>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <h3 class="mb-2">Application Deadline:</h3>
-                                <p>December 1</p>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <h3 class="mb-2">Financial Support:</h3>
-                                <p>IPiB students receive a full stipend as well as tuition remission and comprehensive health insurance.</p>
-                            </div>
-                            <!-- Contact Information -->
-                        <div class="mb-5">
-                            <h3 class="mb-2">Contact Information:</h3>
-                            <p>Biochemistry, Biomolecular Chemistry</p>
-                            <p>College of Agricultural and Life Sciences, School of Medicine and Public Health</p>
-                            <p>Integrated Program in Biochemistry</p>
-                            <p><a href="http://www.ipib.wisc.edu/" target="_blank">http://www.ipib.wisc.edu/</a></p>
-                        </div>
-                        </div>
+                            <button type="button" id="addCourse">Add Course</button>
+                            <button type="submit">Calculate CGPA</button>
+                        </form>
+                        <div id="result" class="result"></div>
+                        <table id="courseTable" class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Course Code</th>
+                                    <th>Credit Units</th>
+                                    <th>Grade</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <button type="button" id="printButton" class="btn btn-secondary mt-3">Print</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Scholarship Details End -->
-
-<!-- Booking Start -->
-<div class="container-fluid my-5 px-0">
-    <div class="container position-relative wow fadeInUp" data-wow-delay="0.1s" style="margin-top: .5rem;">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="bg-primary text-center p-5 booking-form">
-                    <h1 class="mb-4 text-white">Book For A Service</h1>
-                    <form action="booking.php" method="post">
-                        <div class="row g-3">
-                            <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="Your Name" name="name" required>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control border-0" placeholder="Your Email" name="email" required>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="tel" class="form-control border-0" placeholder="Your Phone" name="phone" required>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="date" class="form-control border-0" placeholder="Preferred Date" name="date" required>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <select class="form-select border-0" name="service" required>
-                                    <option selected>Select A Service</option>
-                                    <option value="USA Permanent Resident EB2NIW">USA Permanent Resident EB2NIW</option>
-                                    <option value="Students Visa Application Support">Students Visa Application Support</option>
-                                    <option value="Educational Research and Data Analysis">Educational Research and Data Analysis</option>
-                                    <option value="Career Coaching Program">Career Coaching Program</option>
-                                    <option value="Right Through Program (RTP)">Right Through Program (RTP)</option>
-                                    <option value="Prime One-On-One Consultation">Prime One-On-One Consultation</option>
-                                    <option value="Overseas Admission Application">Overseas Admission Application</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control border-0" placeholder="Send a message" name="message" rows="5"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Booking End -->
+    <!-- CGPA Calculator End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-tert text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -227,8 +240,8 @@
                     <h4 class="text-white mb-3">Links</h4>
                     <a class="btn btn-link" href="aboutus.html">About Us</a>
                     <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
-                    <a class="btn btn-link" href="terms.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="faqs.html">FAQs & Help</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -293,5 +306,107 @@
 
     <script src="js/main.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2076281327328477" crossorigin="anonymous"></script>
+
+    <script>
+        function gradeCalc(grade, unit, scale) {
+            if (scale === "4.0") {
+                if (grade === "A") return 4 * unit;
+                if (grade === "B") return 3 * unit;
+                if (grade === "C") return 2 * unit;
+                if (grade === "D") return 1 * unit;
+                if (grade === "F") return 0 * unit;
+            } else if (scale === "5.0") {
+                if (grade === "A") return 5 * unit;
+                if (grade === "B") return 4 * unit;
+                if (grade === "C") return 3 * unit;
+                if (grade === "D") return 2 * unit;
+                if (grade === "E") return 1 * unit;
+                if (grade === "F") return 0 * unit;
+            }
+            return 0; // Default case
+        }
+
+        let counter = 1;
+
+        function addCourse() {
+            let addNew = document.createElement("tr");
+            addNew.classList.add("course-row");
+            const course_name = `
+            <td><input type="text" placeholder="Course Code" class="form-control courses" required></td>
+            <td><input type="number" class="form-control credit-units" placeholder="Credit Units" value="" required></td>
+            <td>
+                <select class="form-control grade" required>
+                    <option value="select">Select</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </td>
+            <td><button type="button" class="remove-course">Remove</button></td>
+            `;
+            addNew.innerHTML = course_name;
+            document.getElementById("courseTable").querySelector("tbody").appendChild(addNew);
+            counter++;
+
+            const removeButton = addNew.querySelector('.remove-course');
+            removeButton.addEventListener('click', () => {
+                addNew.remove();
+            });
+        }
+
+        function calcCgpa() {
+            const CGPAPARAGRAPH = document.getElementById("result");
+            const GRADESSELECT = document.querySelectorAll("select.grade");
+            const UNIT = document.querySelectorAll("input.credit-units");
+            const COURSES = document.querySelectorAll("input.courses");
+            const gradingSystem = document.getElementById("gradingSystem").value;
+
+            const listOfGrades = [];
+            const listOfUnits = [];
+            const listOfCourses = [];
+            let totalUnits = 0;
+
+            GRADESSELECT.forEach((e, index) => {
+                let GRADES = e.options;
+                const selectedIndex = e.selectedIndex;
+                const selectedGrade = GRADES[selectedIndex];
+                const gradeValue = selectedGrade.value;
+                listOfGrades.push(gradeValue);
+                listOfCourses.push(COURSES[index].value);
+            });
+
+            UNIT.forEach((e) => {
+                const unitValue = parseInt(e.value);
+                totalUnits += unitValue;
+                listOfUnits.push(unitValue);
+            });
+
+            let totalEarnedUnits = 0;
+
+            for (let i = 0; i < listOfUnits.length; i++) {
+                totalEarnedUnits += gradeCalc(listOfGrades[i], listOfUnits[i], gradingSystem);
+            }
+            const gpa = totalEarnedUnits / totalUnits;
+
+            if (gpa >= 0) {
+                CGPAPARAGRAPH.textContent = "Your CGPA is " + gpa.toFixed(2);
+            } else {
+                CGPAPARAGRAPH.textContent = "Please enter a valid grade and credit units";
+            }
+        }
+
+        document.getElementById('addCourse').addEventListener('click', addCourse);
+        document.getElementById('cgpaForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            calcCgpa();
+        });
+
+        document.getElementById('printButton').addEventListener('click', () => {
+            window.print();
+        });
+    </script>
 </body>
 </html>
