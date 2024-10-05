@@ -364,159 +364,128 @@
 
         let counter = 1;
 
-        function addCourse() {
-            let addNew = document.createElement("tr");
-            addNew.classList.add("course-row");
-            const course_name = `
-            <td><input type="text" placeholder="Course Code" class="form-control courses" required></td>
-            <td><input type="number" class="form-control credit-units" placeholder="Credit Units" value="" required></td>
-            <td>
-                <select class="form-control grade" required>
-                    <option value="select">Select</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                    <option value="F">F</option>
-                </select>
-            </td>
-            <td><button type="button" class="remove-course">Remove</button></td>
-            `;
-            addNew.innerHTML = course_name;
-            document.getElementById("courseTable").querySelector("tbody").appendChild(addNew);
-            counter++;
+function addCourse() {
+    let addNew = document.createElement("tr");
+    addNew.classList.add("course-row");
+    const course_name = `
+    <td><input type="text" placeholder="Course Code" class="form-control courses" required></td>
+    <td><input type="number" class="form-control credit-units" placeholder="Credit Units" value="" required></td>
+    <td>
+        <select class="form-control grade" required>
+            <option value="select">Select</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+        </select>
+    </td>
+    <td><button type="button" class="remove-course">Remove</button></td>
+    `;
+    addNew.innerHTML = course_name;
+    document.getElementById("courseTable").querySelector("tbody").appendChild(addNew);
+    counter++;
 
-            const removeButton = addNew.querySelector('.remove-course');
-            removeButton.addEventListener('click', () => {
-                addNew.remove();
-            });
-        }
+    const removeButton = addNew.querySelector('.remove-course');
+    removeButton.addEventListener('click', () => {
+        addNew.remove();
+    });
+}
 
-        function calcCgpa() {
-            const CGPAPARAGRAPH = document.getElementById("result");
-            const GRADESSELECT = document.querySelectorAll("select.grade");
-            const UNIT = document.querySelectorAll("input.credit-units");
-            const COURSES = document.querySelectorAll("input.courses");
-            const gradingSystem = document.getElementById("gradingSystem").value;
+function gradeCalc(grade, unit, scale) {
+    if (scale === "4.0") {
+        if (grade === "A") return 4 * unit;
+        if (grade === "B") return 3 * unit;
+        if (grade === "C") return 2 * unit;
+        if (grade === "D") return 1 * unit;
+        if (grade === "F") return 0 * unit;
+    } else if (scale === "5.0") {
+        if (grade === "A") return 5 * unit;
+        if (grade === "B") return 4 * unit;
+        if (grade === "C") return 3 * unit;
+        if (grade === "D") return 2 * unit;
+        if (grade === "E") return 1 * unit;
+        if (grade === "F") return 0 * unit;
+    }
+    return 0; // Default case
+}
 
-            const listOfGrades = [];
-            const listOfUnits = [];
-            const listOfCourses = [];
-            let totalUnits = 0;
+function calcCgpa() {
+    const CGPAPARAGRAPH = document.getElementById("result");
+    const GRADESSELECT = document.querySelectorAll("select.grade");
+    const UNIT = document.querySelectorAll("input.credit-units");
+    const COURSES = document.querySelectorAll("input.courses");
+    const gradingSystem = document.getElementById("gradingSystem").value;
 
-            GRADESSELECT.forEach((e, index) => {
-                let GRADES = e.options;
-                const selectedIndex = e.selectedIndex;
-                const selectedGrade = GRADES[selectedIndex];
-                const gradeValue = selectedGrade.value;
-                listOfGrades.push(gradeValue);
-                listOfCourses.push(COURSES[index].value);
-            });
+    const listOfGrades = [];
+    const listOfUnits = [];
+    const listOfCourses = [];
+    let totalUnits = 0;
 
-            UNIT.forEach((e) => {
-                const unitValue = parseInt(e.value);
-                totalUnits += unitValue;
-                listOfUnits.push(unitValue);
-            });
+    GRADESSELECT.forEach((e, index) => {
+        let GRADES = e.options;
+        const selectedIndex = e.selectedIndex;
+        const selectedGrade = GRADES[selectedIndex];
+        const gradeValue = selectedGrade.value;
+        listOfGrades.push(gradeValue);
+        listOfCourses.push(COURSES[index].value);
+    });
 
-            let totalEarnedUnits = 0;
+    UNIT.forEach((e) => {
+        const unitValue = parseInt(e.value);
+        totalUnits += unitValue;
+        listOfUnits.push(unitValue);
+    });
 
-            for (let i = 0; i < listOfUnits.length; i++) {
-                totalEarnedUnits += gradeCalc(listOfGrades[i], listOfUnits[i], gradingSystem);
-            }
-            const gpa = totalEarnedUnits / totalUnits;
+    let totalEarnedUnits = 0;
 
-            if (gpa >= 0) {
-                CGPAPARAGRAPH.textContent = "Your CGPA is " + gpa.toFixed(2);
-            } else {
-                CGPAPARAGRAPH.textContent = "Please enter a valid grade and credit units";
-            }
-        }
+    for (let i = 0; i < listOfUnits.length; i++) {
+        totalEarnedUnits += gradeCalc(listOfGrades[i], listOfUnits[i], gradingSystem);
+    }
+    const gpa = totalEarnedUnits / totalUnits;
 
-        document.getElementById('addCourse').addEventListener('click', addCourse);
-        document.getElementById('cgpaForm').addEventListener('submit', (event) => {
-            event.preventDefault();
-            calcCgpa();
-        });
+    if (gpa >= 0) {
+        CGPAPARAGRAPH.textContent = "Your CGPA is " + gpa.toFixed(2);
+    } else {
+        CGPAPARAGRAPH.textContent = "Please enter a valid grade and credit units";
+    }
+}
 
-        document.getElementById('printButton').addEventListener('click', () => {
-            window.print();
-        });
+function resetCalculator() {
+    // Remove all course rows
+    const courseRows = document.querySelectorAll('.course-row');
+    courseRows.forEach(row => row.remove());
 
-// Download PDF functionality
-        document.getElementById('downloadPdfButton').addEventListener('click', () => {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+    // Reset the result paragraph
+    document.getElementById('result').innerText = '';
 
-            // Add the CGPA Calculator title
-            doc.text("CGPA Calculator", 10, 10);
+    // Reset the grading system select
+    document.getElementById('gradingSystem').value = '4.0';
 
-            // Prepare the table data
-            const table = document.getElementById('courseTable');
-            const tableRows = table.rows;
-            const columns = [];
-            const rows = [];
+    // Reset the counter
+    counter = 1;
 
-            // Extract column headers
-            const headerCells = tableRows[0].cells;
-            for (let j = 0; j < headerCells.length - 1; j++) { // Exclude the last cell (Action)
-                columns.push(headerCells[j].innerText);
-            }
+    // Add an initial course row
+    addCourse();
+}
 
-            // Extract table rows
-            for (let i = 1; i < tableRows.length; i++) {
-                const cells = tableRows[i].cells;
-                const rowData = [];
-                for (let j = 0; j < cells.length - 1; j++) { // Exclude the last cell (Action)
-                    rowData.push(cells[j].innerText);
-                }
-                rows.push(rowData);
-            }
+// Initialize the calculator with one course row
+document.addEventListener('DOMContentLoaded', () => {
+    addCourse();
+});
 
-            // Add the table using autoTable
-            doc.autoTable({
-                startY: 20,
-                head: [columns],
-                body: rows,
-            });
+document.getElementById('addCourse').addEventListener('click', addCourse);
+document.getElementById('cgpaForm').addEventListener('submit', (event) => {
+    event.preventDefault();
+    calcCgpa();
+});
 
-            // Add the result
-            const resultText = document.getElementById('result').innerText;
-            const finalY = doc.autoTable.previous.finalY + 10;
-            doc.text(resultText, 10, finalY);
+document.getElementById('printButton').addEventListener('click', () => {
+    window.print();
+});
 
-            // Save the PDF
-            doc.save('cgpa_calculator.pdf');
-        });
-
-        // Reset functionality
-        document.getElementById('resetButton').addEventListener('click', () => {
-            // Remove all course rows
-            const courseRows = document.querySelectorAll('.course-row');
-            courseRows.forEach(row => row.remove());
-
-            // Reset the result paragraph
-            document.getElementById('result').innerText = '';
-
-            // Reset the counter
-            counter = 1;
-        });
-
-
-        // Reset functionality
-        document.getElementById('resetButton').addEventListener('click', () => {
-            // Remove all course rows
-            const courseRows = document.querySelectorAll('.course-row');
-            courseRows.forEach(row => row.remove());
-
-            // Reset the result paragraph
-            document.getElementById('result').innerText = '';
-
-            // Reset the counter
-            counter = 1;
-        });
-
+document.getElementById('resetButton').addEventListener('click', resetCalculator);
 
     </script>
 </body>
