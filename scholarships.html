@@ -84,7 +84,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tools</a>
                         <div class="dropdown-menu m-0">
                             <a href="scholarships.html" class="dropdown-item">Scholarships Finder</a>
-                            <a href="cgpa-calc.html" class="dropdown-item">CGPA Calculator</a>
+                            <a href="cgpa-calc.html" class="dropdown-item">CGPA Calculator</a><a href="fellowships.html" class="dropdown-item">Fellowships Finder</a>
                         </div>
                     </div>
                     <a href="aboutus.html" class="nav-item nav-link">About Us</a>
@@ -203,6 +203,14 @@
         </div>
     </div>
 
+    <!-- Add a container for the Calendly popup -->
+    <div id="calendly-popup" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="calendly-inline-widget"></div>
+        </div>
+    </div>
+
     <!-- Footer Start -->
     <div class="container-fluid bg-tert text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-2">
@@ -282,49 +290,50 @@
             // scholarship data
             const scholarships = [
             {
-                "title": "Graduate College Fellowships & Awards",
-                "institution": "University of Illinois Chicago",
-                "country": "USA",
-                "level": "Graduate",
-                "fundingType": "Fee waiver/discount",
-                "deadline": "Not Specified",
-                "link": 'uic-fellow.html'
-            },
-            {
-                "title": "2025 Mastercard Foundation Innovation and Technology Scholarship Application",
-                "institution": "Arizona State University",
+                "title": "NC State University Ph.D. in Chemistry Scholarship",
+                "institution": "University of North Carolina State University",
                 "country": "USA",
                 "level": "Graduate",
                 "fundingType": "Full Financial Support",
-                "deadline": "3 November, 2024",
-                "link": 'mfd-asu.html'
+                "deadline": "January 15th",
+                "link": 'nc-state-chemistry-phd.html'
             },
+
             {
-                "title": "2025 Mastercard Foundation Scholar Program at Edinburgh University",
-                "institution": "Edinburgh University",
-                "country": "UK",
+                "title": "Purdue University Political Science Ph.D. Funding Opportunity",
+                "institution": "Purdue University - West Lafayette",
+                "country": "USA",
                 "level": "Graduate",
                 "fundingType": "Full Financial Support",
-                "deadline": "November 8, 2024",
-                "link": 'mfd-edinburgh.html'
+                "deadline": "December 15th",
+                "link": 'purdue-polisci-phd.html'
             },
             {
-                "title": "Edinburgh Doctoral College Scholarships",
-                "institution": "Edinburgh University",
-                "country": "UK",
+                "title": "Stanford University Statistics Ph.D. Funding Opportunity",
+                "institution": "Stanford University",
+                "country": "USA",
                 "level": "Graduate",
-                "fundingType": "Stipend & Tuition Waiver",
-                "deadline": "Varies",
-                "link": 'edinburgh-scholarships.html'
+                "fundingType": "Full Financial Support",
+                "deadline": "December 4th",
+                "link": 'stanford-stats-phd.html'
             },
             {
-                "title": "Multiple PhD Fellowships at the University of Copenhagen",
-                "institution": "University of Copenhagen",
-                "country": "Denmark",
+                "title": "University of Louisiana at Lafayette Ph.D. Funding Opportunity",
+                "institution": "University of Louisiana at Lafayette",
+                "country": "USA",
                 "level": "Graduate",
-                "fundingType": "Full Funding",
-                "deadline": "Varies by Program",
-                "link": 'copenhagen.html'
+                "fundingType": "Full Financial Support",
+                "deadline": "February 1st",
+                "link": 'ull-graduate-fellowships.html'
+            },
+            {
+                "title": "Rice University Anthropology Ph.D. Funding Opportunity",
+                "institution": "Rice University",
+                "country": "USA",
+                "level": "Graduate",
+                "fundingType": "Full Financial Support",
+                "deadline": "December 28th",
+                "link": 'rice-anthropology-phd.html'
             },
             {
                 "title": "PhD Opportunity: Simulating Human Blood Flow on Exascale Computers",
@@ -336,24 +345,6 @@
                 "link": 'phd-opportunity.html'
             },
             {
-                "title": "PhD Studentship in Nominal Specification and Verification Environments",
-                "institution": "King's College London, UK",
-                "country": "UK",
-                "level": "Graduate",
-                "fundingType": "Full Funding",
-                "deadline": "December",
-                "link": 'cs-nom.html'
-            },
-            {
-                "title": "PhD Fellowship in Carbon Capture and Utilization (CCU) at the University of Stavanger",
-                "institution": "University of Stavanger",
-                "country": "Norway",
-                "level": "PhD",
-                "fundingType": "Salary, Pension, Relocation + More!",
-                "deadline": "September 19th, 2024",
-                "link": "uis-phd.html"
-              },
-              {
                 "title": "Electrical & Computer Engineering PhD Funding",
                 "institution": "University of Washington",
                 "country": "USA",
@@ -363,15 +354,6 @@
                 "link": "ece-uw.html"
               },
               {
-                "title": "Marsal Family School of Education PhD Funding",
-                "institution": "University of Michigan Marsal Family School of Education",
-                "country": "USA",
-                "level": "PhD",
-                "fundingType": "Full Financial Support",
-                "deadline": "November 15",
-                "link": "umich-edu.html"
-              },
-              {
                 "title": "Physics PhD Funding",
                 "institution": "University of South Carolina",
                 "country": "USA",
@@ -379,24 +361,6 @@
                 "fundingType": "Full Financial Support",
                 "deadline": "January 15",
                 "link": "physics-ucarolina.html"
-              },
-              {
-                "title": "Heinz College PhD Funding",
-                "institution": "Carnegie Melon University",
-                "country": "USA",
-                "level": "PhD",
-                "fundingType": "Full Financial Support",
-                "deadline": "December 1",
-                "link": "heinz-cmu.html"
-              },
-              {
-                "title": "Chemistry | Graduate Assistanships",
-                "institution": "University of Minnesota",
-                "country": "USA",
-                "level": "PhD",
-                "fundingType": "Full Financial Support",
-                "deadline": "December 1",
-                "link": "chm-minnesota.html"
               },
               {
                 "title": "PhD Funding in Social Work",
@@ -417,51 +381,6 @@
                 "link": "medic-boston.html"
               },
               {
-                "title": "Biochemistry PhD, Funding",
-                "institution": "University of Wisconsin–Madison",
-                "country": "USA",
-                "level": "PhD",
-                "fundingType": "Full Financial Support",
-                "deadline": "December 1",
-                "link": "biochem-wiscon.html"
-              },
-              {
-                "title": "Research Assistant in Machine Learning",
-                "institution": "University of Cambridge",
-                "country": "UK",
-                "level": "Graduate",
-                "fundingType": "Salary",
-                "deadline": "19 September 2024",
-                "link": "ra-ml.html"
-              },
-              {
-                "title": "Tepper Business School - PhD Funding",
-                "institution": "Carnegie Melon University",
-                "country": "USA",
-                "level": "PhD",
-                "fundingType": "Full Financial Support",
-                "deadline": "December 1",
-                "link": "tepper-cmu.html"
-              },
-              {
-                "title": "Graduate Assistant Economics",
-                "institution": "Illinois State University",
-                "country": "USA",
-                "level": "Masters & PhD",
-                "fundingType": "Tuition Waiver & Stipend",
-                "deadline": "Open Until Filled",
-                "link": "ga-economics.html"
-              },
-              {
-                "title": "Doctoral Fellowships at BU Questrom School of Business",
-                "institution": "Boston University",
-                "country": "USA",
-                "level": "PhD",
-                "fundingType": "Full Scholarship",
-                "deadline": "December 1",
-                "link": "bu-questrom.html"
-              },
-              {
                 "title": "Teaching assistanships | Mathematics",
                 "institution": "University of illinois urbana champaign",
                 "country": "USA",
@@ -469,23 +388,6 @@
                 "fundingType": "Full Scholarship",
                 "deadline": "December 15",
                 "link": "uoi-ta-maths.html"
-              },
-              {
-                "title": "PhD Funding at Charles River Campus",
-                "institution": "Charles River Campus | Boston University",
-                "country": "Boston, MA, USA",
-                "level": "PhD",
-                "fundingType": "Full Financial Support",
-                "deadline": "December 1",
-                "link": "charles-boston.html"
-              },
-              {
-                "title": "American Association of University Women (AAUW) - International Fellowships",
-                "country": "USA",
-                "level": "Masters & PhD",
-                "fundingType": "Stipend",
-                "deadline": "November 15",
-                "link": "aauw.html"
               },
               {
                 "title": "Ph.D Funding - School of Engineering and Applied Science",
@@ -511,17 +413,8 @@
                 "country": "Canada",
                 "level": "Master",
                 "fundingType": "Full Funding",
-                "deadline": "December 1 & January 15",
+                "deadline": "January 15",
                 "link": "mcgill-mfs.html"
-              },
-              {
-                "title": "Biomedical Sciences Ph.D Funding - University of Oklahoma Health Sciences Center ",
-                "institution": "University of Oklahoma",
-                "country": "USA",
-                "level": "PhD",
-                "fundingType": "Full Funding",
-                "deadline": "December 1",
-                "link": "ouhsc-biomedical.html"
               },
               {
                 "title": "Barakat Trust - Postdoctoral Research Scholarship in Islamic Material & Visual Cultures",
@@ -531,15 +424,6 @@
                 "fundingType": "Stipend",
                 "deadline": "03/2025",
                 "link": "barakat-trust.html"
-              },
-              {
-                "title": "Scholarships & Fellowships at BU Wheelock",
-                "institution": "Boston University",
-                "country": "Boston, MA, USA",
-                "level": "Masters & PhD",
-                "fundingType": "Full Financial Support",
-                "deadline": "December 1",
-                "link": "bu-wheelock.html"
               },
               {
                 "title": "Teaching Assistantship Scholarship |  Department of Arabic and Islamic Studies",
@@ -560,54 +444,32 @@
                 "link": "unm-chm.html"
               },
               {
-                "title": "PhD Fellowship in Optics: Quantitative Phase Microscopy and Tomography",
-                "institution": "UiT The Arctic University of Norway",
-                "country": "Norway",
+                "title": "Ph.D Funding - Medicinal Chemistry",
+                "institution": "University of Toledo",
+                "country": "USA",
                 "level": "PhD",
-                "fundingType": "Salary (NOK 532,200/year) + Benefits",  // Combined salary and benefits for a cleaner format
-                "deadline": "October 20th, 2024",
-                // "link": "https://www.uit.no/en/study/phd/phd-in-science-and-technology/phd-in-energy-and-petroleum-engineering/phd-fellowship-in-carbon-capture-and-utilization-ccu" // Removed link
-                "link": 'uit-phd.html',
+                "fundingType": "Full Funding",
+                "deadline": "January 21, 2025",
+                "link": "utoledo-medchem.html"
               },
               {
-                "title": "Assistantships and Fellowships",
-                "institution": "Louisiana State University (LSU)",
-                "department": "Department of Entomology",
-                "country": "Baton Rouge, Louisiana, United States",
+                "title": "Ph.D Funding - Chemistry",
+                "institution": "University of Rhode Island",
+                "country": "USA",
                 "level": "PhD",
-                "deadline": "Ongoing",
-                "fundingType": "Stipend + Tuition Remission",
-                "link": "lsu-entomology-assistantships.html"
+                "fundingType": "Full Funding",
+                "deadline": "February 1st 2025",
+                "link": "uri-chemistry-phd.html"
               },
               {
-                "title": "Funding Opportunities for Graduate Students",
-                "institution": "University of Michigan",
-                "department": "College of Engineering",
-                "country": "Ann Arbor, Michigan, United States",
+                "title": "Ph.D Funding - Materials Science & Engineering",
+                "institution": "Washington University in St. Louis",
+                "country": "USA",
                 "level": "PhD",
-                "deadline": "Varies",
                 "fundingType": "Full Funding",
-                "link": "umich-eng.html"
-            },
-            {
-                "title": "Funding Opportunities for Graduate Students at Crown Family School of Social Work, Policy, and Practice",
-                "institution": "University of Chicago",
-                "country": "United States",
-                "level": "PhD",
-                "deadline": "December 1",
-                "fundingType": "Full Funding",
-                "link": "crown-school.html"
-            },
-            {
-                "title": "Excellence Scholarship & Opportunity Programme (ESOP)",
-                "institution": "ETH Zurich",
-                "department": "ETH Foundation",
-                "country": "Zurich, Switzerland",
-                "level": "Master's",
-                "deadline": "Nov 30, 2024, 11:59h MEZ",
-                "fundingType": "Full Funding",
-                "link": "esop.html"
-            },
+                "deadline": "December 15th  2025",
+                "link": "wustl-mse-phd.html"
+              },
             {
                 "title": "Optiver Foundation Scholarships",
                 "institution": "University of Oxford",
@@ -623,19 +485,9 @@
                 "institution": "Cambridge University",
                 "country": "United Kingdom",
                 "level": "PhD",
-                "deadline": "December 3 | January 15",
+                "deadline": "January 15",
                 "fundingType": "Full Funding",
                 "link": "gates-uk.html"
-            },
-            {
-                "title": "University of Oxford Scholarships",
-                "institution": "University of Oxford",
-                "department": "Department of Engineering Science",
-                "country": "Oxford, United Kingdom",
-                "level": "PhD",
-                "deadline": "December 1",
-                "fundingType": "Full Funding",
-                "link": "oxford-eng.html"
             },
             {
                 "title": "Mastercard Foundation Scholars Program",
@@ -647,49 +499,7 @@
                 "fundingType": "Full Funding",
                 "link": "oxford-mastercard.html"
             },
-
-              {
-                "title": "UKRI Funding",
-                "institution": "University of Cambridge",
-                "department": "Postgraduate Study",
-                "country": "Cambridge, United Kingdom",
-                "level": "PhD",
-                "deadline": "Varies",
-                "fundingType": "Full Funding",
-                "link": "ukri.html"
-            },
-
-              {
-                "title": "PhD Fellowship in Intra-body Semantic Communications – Theory and Principles for Receiver Design",
-                "institution": "Norwegian University of Science and Technology (NTNU)",
-                "country": "Norway",
-                "level": "PhD",
-                "fundingType": "Salary (NOK 532,200/year) + Benefits", // Combined salary and benefits for a cleaner format
-                "deadline": "October 1st, 2024",
-                // "link": "https://www.jobbnorge.no/en/job/NTNU-Norwegian-University-of-Science-and-Technology/PhD-Fellowship-in-Intra-body-Semantic-Communications-%E2%80%93-Theory-and-Principles-for-Receiver-Design/6343903" // Removed link
-                "link": "ntnu-phd.html"
-              },
-              {
-                "title": "PhD Candidate in Reference Systems for a Cyber-Physical Range",
-                "institution": "Norwegian University of Science and Technology (NTNU)",
-                "department": "Department of Information Security and Communication Technology",
-                "location": "Gjøvik, Norway",
-                "duration": "3 years",
-                "deadline": "August 24, 2024",
-                "fundingType": "Salary (NOK 532,200/year) + Benefits",
-                "link": "ntnu-phd2.html"
-              },
-              {
-                "title": "Assistantships",
-                "institution": "University of Kentucky",
-                "department": "Graduate School",
-                "location": "Lexington, KY, United States",
-                "duration": "Varies",
-                "deadline": "Ongoing",
-                "fundingType": "Stipend + Tuition Scholarship",
-                "link": "uk-kent-ga.html"
-              },
-              {
+            {
                 "title": "PHD Graduate Assistanships",
                 "institution": "University at Buffalo.",
                 "Country": "USA",
@@ -697,8 +507,8 @@
                 "deadline": "Dec 1 | January 1",
                 "fundingType": "Stipend + Benefits",
                 "link": "ub-gse.html"
-              },
-              {
+            },
+            {
                 "title": "Ph.D. Research Assistant",
                 "institution": "Howard University",
                 "department": "Department of Mechanical Engineering",
@@ -707,8 +517,8 @@
                 "deadline": "January 10, 2025",
                 "fundingType": "Stipend + Benefits",
                 "link": "howard_ga.html"
-              },
-              {
+            },
+            {
                 "title": "Ph.D. Research Assistant",
                 "institution": "Howard University",
                 "department": "Department of Mechanical Engineering",
@@ -717,7 +527,7 @@
                 "deadline": "January 10, 2025",
                 "fundingType": "Stipend + Benefits",
                 "link": "howard_ga.html"
-              },
+            },
 
         ];
 
@@ -750,8 +560,9 @@
                 function displayScholarships(scholarshipsToShow) {
                     const scholarshipsList = document.getElementById('scholarshipsList');
                     scholarshipsList.innerHTML = '';
-
+        
                     scholarshipsToShow.forEach((scholarship, index) => {
+                        const isReminderSet = checkReminder(scholarship.title);
                         const scholarshipHtml = `
                         <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="${0.1 + index * 0.2}s">
                             <div class="service-item rounded pt-3">
@@ -763,6 +574,9 @@
                                     <p><i class="fas fa-dollar-sign text-primary me-2"></i>${scholarship.fundingType}</p>
                                     ${scholarship.deadline ? `<p><i class="fas fa-calendar-alt text-primary me-2"></i>${scholarship.deadline}</p>` : ''}
                                     <a href="${scholarship.link}" class="btn btn-primary mt-2" style="border-radius: 25px; padding: 8px 20px; font-weight: 500; transition: all 0.3s ease;">View details</a>
+                                    <button onclick="toggleReminder('${scholarship.title}', '${scholarship.deadline}')" class="btn ${isReminderSet ? 'reminder-set' : 'btn-secondary'} mt-2" style="border-radius: 25px; padding: 8px 20px; font-weight: 500; transition: all 0.3s ease;">
+                                        ${isReminderSet ? 'Reminder Set' : 'Set Reminder'}
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -770,7 +584,43 @@
                         scholarshipsList.innerHTML += scholarshipHtml;
                     });
                 }
-
+        
+                function checkReminder(title) {
+                    const reminders = JSON.parse(localStorage.getItem('scholarshipReminders') || '[]');
+                    return reminders.some(reminder => reminder.title === title);
+                }
+        
+                function toggleReminder(title, deadline) {
+                    const reminders = JSON.parse(localStorage.getItem('scholarshipReminders') || '[]');
+                    const index = reminders.findIndex(reminder => reminder.title === title);
+        
+                    if (index !== -1) {
+                        reminders.splice(index, 1);
+                        alert('Reminder removed.');
+                    } else {
+                        reminders.push({ title, deadline });
+                        alert('Reminder set!');
+                    }
+        
+                    localStorage.setItem('scholarshipReminders', JSON.stringify(reminders));
+                    filterScholarships(); // Refresh the display
+                }
+        
+                function checkDueReminders() {
+                    const reminders = JSON.parse(localStorage.getItem('scholarshipReminders') || '[]');
+                    const now = new Date();
+        
+                    reminders.forEach(reminder => {
+                        const deadlineDate = new Date(reminder.deadline);
+                        if (deadlineDate > now && deadlineDate - now <= 7 * 24 * 60 * 60 * 1000) { // Within 7 days
+                            alert(`Reminder: The deadline for "${reminder.title}" is approaching on ${reminder.deadline}`);
+                        }
+                    });
+                }
+        
+                // Call this function when the page loads
+                window.addEventListener('load', checkDueReminders);
+        
                 function updatePagination(totalPages) {
                     const pagination = document.getElementById('pagination');
                     pagination.innerHTML = '';

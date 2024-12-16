@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ultra Ade Tech | Find a Fellowship</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="Find fellowships for various levels and countries at Ultra Ade Tech. Filter by organization, research area, and more.">
+    <meta name="keywords" content="fellowships, education, funding, graduate, postdoctoral, research, AMNH, ACM SIGHPC">
+    <meta name="author" content="Ultra Ade Tech">
+
+    <!-- Favicon -->
+    <link href="img/icon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="fellowship">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Iowa City, IA, United States.</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i><a href="tel:+1 712-509-9002">+1 712-509-9002</a></small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i><a href="mailto:contact@ultraadetech.com">contact@ultraadetech.com</a></small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://web.facebook.com/profile.php?id=61557894001405" target="_blank"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/company/ultra-ade-tech/" target="_blank"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/ultraadetech/" target="_blank"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.youtube.com/channel/UCL-gPJQY3hwMVpZg5D07S_w" target="_blank"><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0 m-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/logo_2.png" width="100px" alt="Logo" class="d-none d-lg-block">
+                <img src="img/logo_1.png" alt="Logo" width="100px" class="d-lg-none">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="custom-navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tools</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="scholarships.html" class="dropdown-item">Scholarships Finder</a>
+                            <a href="cgpa-calc.html" class="dropdown-item">CGPA Calculator</a>
+                            <a href="fellowships.html" class="dropdown-item">Fellowships Finder</a>
+                        </div>
+                    </div>
+                    <a href="aboutus.html" class="nav-item nav-link">About Us</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">More</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="update.html" class="dropdown-item">News & Updates</a>
+                            <a href="faqs.html" class="dropdown-item">FAQs</a>
+                            <a href="events.html" class="dropdown-item">Events</a>
+                            <a href="fellowships.html" class="dropdown-item">Fellowships</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-4">Book Consultation</a>
+            </div>
+        </nav>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid bg-primary py-5 mb-2 hero-headerX">
+                        <div class="container py-5">
+                            <div class="row justify-content-center py-5">
+                                <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                                    <h1 class="display-3 text-primary mb-5 animated slideInDown">Fellowships Finder</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row g-3">
+            <div class="col-12">
+                <input type="text" class="form-control" id="searchFellowship" placeholder="Search fellowships...">
+            </div>
+            <div class="col-md-4 mx-auto mt-2">
+                <select class="form-select" id="filterOrganization">
+                    <option value="">All Organizations</option>
+                </select>
+            </div>
+            <div class="col-md-4 mx-auto mt-2">
+                <select class="form-select" id="filterResearchArea">
+                    <option value="">All Research Areas</option>
+                </select>
+            </div>
+            <div class="col-md-4 mx-auto mt-2">
+                <select class="form-select" id="filterDuration">
+                    <option value="">All Durations</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-secondary my-1" id="resetFilters">Reset Filters</button>
+            </div>
+        </div>
+
+        <!-- Fellowships List -->
+        <div class="row g-4 mx-2 rounded" id="fellowshipsList">
+            <!-- Fellowship items will be dynamically added here -->
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="d-flex justify-content-center mt-4">
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="pagination">
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-tert text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-2">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Links</h4>
+                    <a class="btn btn-link" href="aboutus.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="faqs.html">FAQs & Help</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Iowa City, IA, United States</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+1 712-509-9002" class="text-white">+1 712-509-9002</a></p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+234 814-849-6243" class="text-white">+234 814-849-6243</a></p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+234 907-175-4008" class="text-white">+234 907-175-4008</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:contact@ultraadetech.com" class="text-white">contact@ultraadetech.com</a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://web.facebook.com/profile.php?id=61557894001405" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/ultra-ade-tech/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ultraadetech/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/channel/UCL-gPJQY3hwMVpZg5D07S_w" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Join our mailing list to receive the latest news, updates, and exclusive offers from Ultra Ade Tech. We promise not to spam you!</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        Copyright &copy; 2024, Ultra Ade Tech.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="terms.html">Terms & Condition</a>
+                            <a href="faqs.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2076281327328477" crossorigin="anonymous"></script>
+    <script>
+        // fellowship data
+        const fellowships = [
+            {
+                "name": "AMNH Postdoctoral Fellowships",
+                "organization": "American Museum of Natural History",
+                "description": "Various postdoctoral fellowships supporting research in natural sciences and anthropology",
+                "deadline": {
+                    "anticipated": "11/2025",
+                    "previous": "11/15/2024"
+                },
+                "duration": "Typically 2 years",
+                "stipend": {
+                    "amount": 67095,
+                    "currency": "USD",
+                    "frequency": "annual"
+                },
+                "eligibility": [
+                    "Open to all nationalities",
+                    "Must have received Ph.D. or deposited dissertation before appointment",
+                    "Newly graduated or soon-to-graduate PhDs may apply"
+                ],
+                "researchAreas": [
+                    "Biology",
+                    "Marine Research",
+                    "North American Fauna",
+                    "Bioinformatics",
+                    "Avian Studies",
+                    "Museum Anthropology"
+                ],
+                "additionalBenefits": [
+                    "Relocation assistance",
+                    "Research funds (for some fellowships)"
+                ],
+                "applicationUrl": "http://www.amnh.org/our-research/richard-gilder-graduate-school/academics-and-research/fellowship-and-grant-opportunities/postdoctoral-fellowships",
+                "contactEmail": "rggs@amnh.org"
+            },
+            {
+                "name": "ACM SIGHPC / Intel Graduate Fellowship",
+                "organization": "Association for Computing Machinery & Intel",
+                "description": "Fellowships for women and underrepresented students in computational and data science",
+                "deadline": {
+                    "anticipated": "04/2025",
+                    "previous": "04/30/2024"
+                },
+                "duration": "2-4 years",
+                "stipend": {
+                    "amount": 15000,
+                    "currency": "USD",
+                    "frequency": "annual",
+                    "note": "Adjusted based on country"
+                },
+                "eligibility": [
+                    "Currently enrolled in or accepted to a recognized graduate program",
+                    "Pursuing master's, PhD, or equivalent in computational or data science",
+                    "Completed less than half of planned program of study",
+                    "Woman and/or member of underrepresented racial/ethnic group in computing",
+                    "Nominated by advisor or intended advisor"
+                ],
+                "researchAreas": [
+                    "Computational modeling and simulation",
+                    "Computational chemistry",
+                    "Wildfire modeling",
+                    "Computational hydrodynamics",
+                    "Ecological informatics",
+                    "Financial analytics"
+                ],
+                "additionalBenefits": [
+                    "Travel support for SC Conference",
+                    "Recognition at SC Conference Awards Session",
+                    "Possible extended support up to 4 years"
+                ],
+                "applicationUrl": "https://www.sighpc.org/for-your-career/fellowships",
+                "contactEmail": "fellowships@sighpc.org"
+            }
+        ];
+
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        document.getElementById('searchFellowship').addEventListener('input', debounce(filterFellowships, 300));
+
+        document.getElementById('resetFilters').addEventListener('click', () => {
+            document.getElementById('searchFellowship').value = '';
+            document.getElementById('filterOrganization').value = '';
+            document.getElementById('filterResearchArea').value = '';
+            document.getElementById('filterDuration').value = '';
+            filterFellowships();
+        });
+
+        function displayFellowships(fellowshipsToShow) {
+            const fellowshipsList = document.getElementById('fellowshipsList');
+            fellowshipsList.innerHTML = '';
+
+            fellowshipsToShow.forEach((fellowship, index) => {
+                const fellowshipHtml = `
+                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="${0.1 + index * 0.2}s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <h5 class="mb-3">${fellowship.name}</h5>
+                            <p><i class="fas fa-university text-primary me-2"></i>${fellowship.organization}</p>
+                            <p><i class="fas fa-info-circle text-primary me-2"></i>${fellowship.description}</p>
+                            <p><i class="fas fa-calendar-alt text-primary me-2"></i>Deadline: ${fellowship.deadline.anticipated} (Previous: ${fellowship.deadline.previous})</p>
+                            <p><i class="fas fa-clock text-primary me-2"></i>Duration: ${fellowship.duration}</p>
+                            <p><i class="fas fa-dollar-sign text-primary me-2"></i>Stipend: ${fellowship.stipend.amount} ${fellowship.stipend.currency} ${fellowship.stipend.frequency}</p>
+                            <p><i class="fas fa-graduation-cap text-primary me-2"></i>Eligibility: ${fellowship.eligibility.join(', ')}</p>
+                            <p><i class="fas fa-microscope text-primary me-2"></i>Research Areas: ${fellowship.researchAreas.join(', ')}</p>
+                            <p><i class="fas fa-gift text-primary me-2"></i>Additional Benefits: ${fellowship.additionalBenefits.join(', ')}</p>
+                            <a href="${fellowship.applicationUrl}" class="btn btn-primary mt-2" target="_blank">Apply Now</a>
+                            <a href="mailto:${fellowship.contactEmail}" class="btn btn-secondary mt-2">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                `;
+                fellowshipsList.innerHTML += fellowshipHtml;
+            });
+        }
+
+        function updatePagination(totalPages) {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageItem = document.createElement('li');
+                pageItem.classList.add('page-item');
+                if (i === currentPage) {
+                    pageItem.classList.add('active');
+                }
+                const pageLink = document.createElement('a');
+                pageLink.classList.add('page-link');
+                pageLink.href = '#';
+                pageLink.innerText = i;
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    filterFellowships();
+                });
+                pageItem.appendChild(pageLink);
+                pagination.appendChild(pageItem);
+            }
+        }
+
+        function filterFellowships() {
+            const searchTerm = document.getElementById('searchFellowship').value.toLowerCase();
+            const organizationFilter = document.getElementById('filterOrganization').value;
+            const researchAreaFilter = document.getElementById('filterResearchArea').value;
+            const durationFilter = document.getElementById('filterDuration').value;
+
+            let filteredFellowships = fellowships.filter(fellowship => {
+                return fellowship.name.toLowerCase().includes(searchTerm) &&
+                    (organizationFilter === '' || fellowship.organization === organizationFilter) &&
+                    (researchAreaFilter === '' || fellowship.researchAreas.includes(researchAreaFilter)) &&
+                    (durationFilter === '' || fellowship.duration.includes(durationFilter));
+            });
+
+            const totalPages = Math.ceil(filteredFellowships.length / itemsPerPage);
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const fellowshipsToShow = filteredFellowships.slice(startIndex, endIndex);
+
+            displayFellowships(fellowshipsToShow);
+            updatePagination(totalPages);
+        }
+
+        function populateFilterOptions() {
+            const organizationSelect = document.getElementById('filterOrganization');
+            const researchAreaSelect = document.getElementById('filterResearchArea');
+            const durationSelect = document.getElementById('filterDuration');
+
+            const organizations = new Set();
+            const researchAreas = new Set();
+            const durations = new Set();
+
+            fellowships.forEach(fellowship => {
+                organizations.add(fellowship.organization);
+                fellowship.researchAreas.forEach(area => researchAreas.add(area));
+                durations.add(fellowship.duration);
+            });
+
+            function addOptions(select, options) {
+                options.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.textContent = option;
+                    select.appendChild(optionElement);
+                });
+            }
+
+            addOptions(organizationSelect, organizations);
+            addOptions(researchAreaSelect, researchAreas);
+            addOptions(durationSelect, durations);
+        }
+
+        // Initial display
+        populateFilterOptions();
+        filterFellowships();
+
+        // Add event listeners
+        document.getElementById('filterOrganization').addEventListener('change', filterFellowships);
+        document.getElementById('filterResearchArea').addEventListener('change', filterFellowships);
+        document.getElementById('filterDuration').addEventListener('change', filterFellowships);
+    </script>
+</body>
+</html>
